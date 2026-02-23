@@ -200,6 +200,10 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  res.send("API running");
+});
+
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
